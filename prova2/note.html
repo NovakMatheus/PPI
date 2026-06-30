@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloco de Notas</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+.lista{
+    width:300px;
+    background:white;
+    border-right:1px solid #ccc;
+    padding:20px;
+}
+
+.lista button{
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.lista li:hover{
+    background:#ddd;
+}
+
+.editor{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+}
+
+#titulo{
+    padding:10px;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+#conteudo{
+    padding:10px;
+    font-size:16px;
+}
+
+.botoes{
+    margin-top:10px;
+}
+
+.botoes button{
+    padding:10px 20px;
+    margin-right:10px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="lista">
+
+        <h2>Minhas Notas</h2>
+
+        <button onclick="novaNota()">+ Nova Nota</button>
+
+        <ul id="listaNotas"></ul>
+
+    </div>
+
+    <div class="editor">
+
+        <input type="text" id="titulo" placeholder="Título">
+
+        <textarea id="conteudo" placeholder="Digite sua nota..."></textarea>
+
+        <div class="botoes">
+
+            <button onclick="salvarNota()">Salvar</button>
+
+            <button onclick="excluirNota()">Excluir</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let notas = JSON.parse(localStorage.getItem("notas")) || [];
+
+let notaAtual = null;
+
+function salvarLocal(){
+
+    localStorage.setItem("notas",JSON.stringify(notas));
+
+}
+
+function listarNotas(){
+
+    const lista=document.getElementById("listaNotas");
+
+    lista.innerHTML="";
+
+    notas.forEach(nota=>{
+
+        let li=document.createElement("li");
+
+        li.innerText=nota.titulo || "Sem título";
+
+        li.onclick=function(){
+
+            abrirNota(nota.id);
+
+        };
+
+        lista.appendChild(li);
+
+    });
+
+}
+
+function abrirNota(id){
+
+    notaAtual=notas.find(n=>n.id==id);
+
+    document.getElementById("titulo").value=notaAtual.titulo;
+
+    document.getElementById("conteudo").value=notaAtual.conteudo;
+
+}
+
+function novaNota(){
+
+    notaAtual=null;
+
+    document.getElementById("titulo").value="";
+
+    document.getElementById("conteudo").value="";
+
+}
+
+function salvarNota(){
+
+    let titulo = document.getElementById("titulo").value;
+    let conteudo = document.getElementById("conteudo").value;
+
+    if(notaAtual == null){
+
+        notas.push({
+            id: Date.now(),
+            titulo: titulo,
+            conteudo: conteudo
+        });
+
+    }else{
+
+        notaAtual.titulo = titulo;
+        notaAtual.conteudo = conteudo;
+
+    }
+
+    salvarLocal();
+    listarNotas();
+
+}
+
+function excluirNota(){
+
+    if(notaAtual==null){
+
+        alert("Selecione uma nota.");
+
+        return;
+
+    }
+
+    notas=notas.filter(n=>n.id!=notaAtual.id);
+
+        salvarLocal();
+
+        listarNotas();
+
+        novaNota();
+
+}
+
+listarNotas();
+
+</script>
+
+</body>
+</html>

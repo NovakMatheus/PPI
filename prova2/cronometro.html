@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronômetro</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#2c3e50;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.cronometro{
+    background:#1f2937;
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    width:350px;
+}
+
+#tempo{
+    font-size:45px;
+    margin:20px;
+}
+
+button{
+    padding:12px 20px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    color:white;
+}
+
+.iniciar{
+    background:#27ae60;
+}
+
+.pausar{
+    background:#f39c12;
+}
+
+.parar{
+    background:#c0392b;
+}
+</style>
+
+</head>
+<body>
+
+<div class="cronometro">
+
+<h2>Cronômetro</h2>
+
+<div id="tempo">00:00:00</div>
+
+<button class="iniciar" onclick="iniciar()">Iniciar (I)</button>
+
+<button class="pausar" onclick="pausar()">Pausar (P)</button>
+
+<button class="parar" onclick="parar()">Parar (S)</button>
+
+<h3>Pausas</h3>
+
+<ul id="listaPausas"></ul>
+
+</div>
+
+<script>
+
+let inicio;
+let tempoDecorrido = 0;
+let intervalo;
+let rodando = false;
+
+const tempo = document.getElementById("tempo");
+const lista = document.getElementById("listaPausas");
+
+function atualizar(){
+
+    const agora = new Date();
+
+    const diferenca = agora - inicio + tempoDecorrido;
+
+    const horas = Math.floor(diferenca / 3600000);
+    const minutos = Math.floor((diferenca % 3600000) / 60000);
+    const segundos = Math.floor((diferenca % 60000) / 1000);
+
+    tempo.textContent =
+        String(horas).padStart(2,"0")+":"+
+        String(minutos).padStart(2,"0")+":"+
+        String(segundos).padStart(2,"0");
+}
+
+function iniciar(){
+
+    if(rodando) return;
+
+    inicio = new Date();
+
+    intervalo = setInterval(atualizar,100);
+
+    rodando = true;
+}
+
+function pausar(){
+
+    if(!rodando) return;
+
+    clearInterval(intervalo);
+
+    tempoDecorrido += new Date() - inicio;
+
+    rodando = false;
+
+    const item = document.createElement("li");
+    item.textContent = tempo.textContent;
+
+    lista.appendChild(item);
+}
+
+function parar(){
+
+    clearInterval(intervalo);
+
+    rodando = false;
+
+    tempoDecorrido = 0;
+
+    tempo.textContent = "00:00:00";
+
+    lista.innerHTML = "";
+}
+
+document.addEventListener("keydown", function(event){
+
+    switch(event.key.toLowerCase()){
+
+        case "i":
+            iniciar();
+            break;
+
+        case "p":
+            pausar();
+            break;
+
+        case "s":
+            parar();
+            break;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
