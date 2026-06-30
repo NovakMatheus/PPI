@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(lightblue,#8fc9e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.calculadora{
+    width:360px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px gray;
+}
+
+#display{
+    width:100%;
+    height:90px;
+    border:none;
+    background:#222;
+    color:white;
+    font-size:45px;
+    text-align:right;
+    padding-right:15px;
+}
+
+.botoes{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+button{
+    height:60px;
+    font-size:28px;
+    border:1px solid #ccc;
+    cursor:pointer;
+    background:white;
+}
+
+button:hover{
+    background:#eee;
+}
+
+.igual{
+    grid-row:2 / span 4;
+    grid-column:4;
+    background:coral;
+    color:white;
+    font-size:35px;
+}
+
+.igual:hover{
+    background:orangered;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="calculadora">
+
+<input type="text" id="display" value="0" readonly>
+
+<div class="botoes">
+
+<button onclick="adicionar('+')">+</button>
+<button onclick="adicionar('-')">-</button>
+<button onclick="adicionar('*')">×</button>
+<button onclick="adicionar('/')">÷</button>
+
+<button onclick="adicionar('7')">7</button>
+<button onclick="adicionar('8')">8</button>
+<button onclick="adicionar('9')">9</button>
+
+<button onclick="adicionar('4')">4</button>
+<button onclick="adicionar('5')">5</button>
+<button onclick="adicionar('6')">6</button>
+
+<button class="igual" onclick="calcular()">=</button>
+
+<button onclick="adicionar('1')">1</button>
+<button onclick="adicionar('2')">2</button>
+<button onclick="adicionar('3')">3</button>
+
+<button onclick="adicionar('0')">0</button>
+<button onclick="adicionar('.')">.</button>
+<button onclick="limpar()">AC</button>
+
+</div>
+
+</div>
+
+<script>
+
+let expressao = "";
+
+function adicionar(valor){
+
+    if(expressao == "" && valor == ".")
+        expressao = "0";
+
+    expressao += valor;
+
+    document.getElementById("display").value = expressao;
+
+}
+
+function limpar(){
+
+    expressao = "";
+    document.getElementById("display").value = "0";
+
+}
+
+function calcular(){
+
+    try{
+
+        expressao = eval(expressao).toString();
+
+        document.getElementById("display").value = expressao;
+
+    }
+
+    catch{
+
+        document.getElementById("display").value = "Erro";
+        expressao = "";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

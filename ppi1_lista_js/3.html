@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IMC</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:30px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+}
+
+input{
+    padding:8px;
+    width:200px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+p{
+    font-size:18px;
+    margin-top:15px;
+}
+
+img{
+    margin-top:20px;
+    width:220px;
+    height:auto;
+    border:1px solid #ccc;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Calculadora de IMC</h1>
+
+<label>Nome:</label>
+<input type="text" id="nome">
+
+<label>Peso (kg):</label>
+<input type="number" id="peso" step="0.1">
+
+<label>Altura (m):</label>
+<input type="number" id="altura" step="0.01">
+
+<br>
+
+<button onclick="calcular()">Calcular</button>
+
+<p id="resultadoIMC"></p>
+
+<p id="classificacao"></p>
+
+<img id="imgPerfil" src="" alt="Perfil">
+
+<script>
+
+function calcular(){
+
+    let nome = document.getElementById("nome").value;
+    let peso = parseFloat(document.getElementById("peso").value);
+    let altura = parseFloat(document.getElementById("altura").value);
+
+    if(nome=="" || isNaN(peso) || isNaN(altura)){
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    let imc = peso/(altura*altura);
+
+    document.getElementById("resultadoIMC").innerText =
+    nome + ", seu IMC é " + imc.toFixed(2);
+
+    let texto="";
+
+    if(imc<18.5){
+        texto="Abaixo do peso";
+    }
+    else if(imc<25){
+        texto="Peso normal";
+    }
+    else if(imc<30){
+        texto="Sobrepeso";
+    }
+    else if(imc<35){
+        texto="Obesidade grau 1";
+    }
+    else if(imc<40){
+        texto="Obesidade grau 2";
+    }
+    else{
+        texto="Obesidade grau 3 (mórbida)";
+    }
+
+    document.getElementById("classificacao").innerText =
+    "Classificação: " + texto;
+
+    let img = document.getElementById("imgPerfil");
+
+    switch(true){
+
+        case (Math.floor(imc) < 18):
+            img.src="https://thumbs.dreamstime.com/z/homem-magro-9403778.jpg";
+            break;
+
+        case (Math.floor(imc) < 25):
+            img.src="https://img.magnific.com/fotos-gratis/jovem-bonito-vestindo-camiseta-casual-sobre-o-rosto-feliz-de-fundo-azul-sorrindo-com-os-bracos-cruzados-olhando-para-a-camera-pessoa-positiva_839833-12963.jpg?semt=ais_hybrid&w=740&q=80";
+            break;
+
+        case (Math.floor(imc) < 30):
+            img.src="https://t3.ftcdn.net/jpg/12/29/28/36/360_F_1229283608_eMGlP5IcOCYRtbxCUF8V2I1nIlTRVlaf.jpg";
+            break;
+
+        case (Math.floor(imc) < 35):
+            img.src="https://s2-g1.glbimg.com/n_murtr0_JPXRIk_zg41FB6shsY=/0x0:2500x1667/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2017/A/E/erHDhwTHWp1CBPGTcNTg/face-1-4264.jpg";
+            break;
+
+        case (Math.floor(imc) < 40):
+            img.src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/E06F/production/_98855475_comida.jpg.webp";
+            break;
+
+        default:
+            img.src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2015/10/31/homem-mais-gordo-cirurgia-efe.jpg";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

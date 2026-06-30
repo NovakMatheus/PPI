@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercício</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+    color: black;
+}
+
+#d1{
+    background: blueviolet;
+}
+
+#d2{
+    background: green;
+}
+
+#d3{
+    background: red;
+}
+
+#d4{
+    background: yellow;
+}
+</style>
+</head>
+
+<body>
+
+<div id="d1">1</div>
+<div id="d2">2</div>
+<div id="d3">3</div>
+<div id="d4">4</div>
+
+</body>
+</html>
+
+A página apresenta quatro faixas horizontais devido às seguintes características do HTML e CSS:
+
+Cada <div> é um elemento de bloco (display: block) por padrão. Isso faz com que ocupe 100% da largura disponível e que o próximo <div> seja exibido abaixo do anterior.
+A altura (height: 100px) define que cada faixa terá exatamente 100 pixels de altura.
+A largura (width: 100%) faz com que cada <div> ocupe toda a largura da janela do navegador.
+A propriedade background atribui uma cor diferente para cada faixa:
+blueviolet → primeira faixa;
+green → segunda faixa;
+red → terceira faixa;
+yellow → quarta faixa.
+text-align: center centraliza o número horizontalmente.
+line-height: 100px possui o mesmo valor da altura da <div>, fazendo com que o número fique centralizado verticalmente.
+margin: 0 e padding: 0 removem as margens e espaçamentos padrão do navegador, permitindo que as faixas encostem umas nas outras e nas bordas da janela.

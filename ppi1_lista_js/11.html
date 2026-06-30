@@ -1,0 +1,32 @@
+<script>
+
+window.onload = function(){
+
+    let nome = localStorage.getItem("nome");
+
+    if(nome){
+        document.getElementById("greeting").innerText =
+        "Olá, " + nome + "!";
+    }
+
+}
+
+document.getElementById("saveButton").addEventListener("click", function(){
+
+    let nome = document.getElementById("nameInput").value;
+
+    if(nome != ""){
+
+        localStorage.setItem("nome", nome);
+
+        document.getElementById("greeting").innerText =
+        "Olá, " + nome + "!";
+
+    }
+    else{
+        alert("Digite um nome.");
+    }
+
+});
+
+</script>

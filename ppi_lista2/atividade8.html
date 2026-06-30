@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Responsivo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+    padding:10px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:150px 1fr 1fr;
+    grid-template-rows:60px 180px 140px;
+    gap:10px;
+}
+
+.menu{
+    grid-row:1 / 4;
+    background:#efb6a7;
+}
+
+.top{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:white;
+}
+
+.circulo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.c1{background:#b8c6e8;}
+.c2{background:#bfd26b;}
+.c3{background:#f3b01e;}
+.c4{background:#d8b5b5;}
+
+.header{
+    background:#ee9458;
+}
+
+.box1{
+    background:#f8a31a;
+}
+
+.box2{
+    background:#cdc1e8;
+}
+
+.box3{
+    background:#cfe0e5;
+}
+
+.box4{
+    background:#cfd9a3;
+}
+
+/* Responsividade */
+@media screen and (max-width:500px){
+
+.container{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+}
+
+.menu,
+.top,
+.header,
+.box1,
+.box2,
+.box3,
+.box4{
+    grid-row:auto;
+    min-height:100px;
+}
+
+.top{
+    justify-content:center;
+    gap:15px;
+    padding:20px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="menu"></div>
+
+    <div class="top">
+        <div class="circulo c1"></div>
+        <div class="circulo c2"></div>
+        <div class="circulo c3"></div>
+        <div class="circulo c4"></div>
+    </div>
+
+    <div class="header"></div>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="box3"></div>
+    <div class="box4"></div>
+
+</div>
+
+</body>
+</html>

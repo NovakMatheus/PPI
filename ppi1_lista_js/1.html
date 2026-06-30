@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+</head>
+<body>
+
+    <h1 id="titulo">O que é JavaScript?</h1>
+
+    <p id="motivacao">
+        O JavaScript foi criado em 1995 por Brendan Eich para tornar as páginas
+        da Web interativas. Antes dele, as páginas HTML eram estáticas, sem
+        recursos para responder às ações do usuário, como cliques, validação de
+        formulários e animações.
+    </p>
+
+    <p id="execucao">
+        O JavaScript pode ser executado tanto no navegador quanto no servidor.
+        No navegador, ele é interpretado pelo motor JavaScript do browser e pode
+        manipular a página HTML, o CSS e interagir com o usuário. No servidor,
+        utilizando plataformas como Node.js, ele executa tarefas como acesso a
+        banco de dados, criação de APIs e processamento de informações.
+    </p>
+
+    <p id="sandbox">
+        No navegador, o JavaScript é executado em um ambiente chamado
+        <strong>sandbox</strong>. Isso significa que o código possui restrições
+        de segurança, não podendo acessar livremente arquivos do computador ou o
+        sistema operacional do usuário sem autorização.
+    </p>
+
+    <p id="objetos">
+        Alguns dos principais objetos globais do JavaScript são:
+        <br><strong>document</strong>: permite acessar e modificar os elementos da página.
+        <br><strong>console</strong>: exibe mensagens no console do navegador para depuração.
+        <br><strong>alert</strong>: mostra uma caixa de diálogo com uma mensagem ao usuário.
+    </p>
+
+    <h2 id="horaTitulo">Hora Atual</h2>
+
+    <p id="hora"></p>
+
+    <script>
+
+        console.log("Página carregada com sucesso!");
+
+        alert("Seja bem-vindo ao exemplo de JavaScript!");
+
+        let agora = new Date();
+
+        document.getElementById("hora").innerHTML =
+            "Hora atual: " + agora.toLocaleTimeString();
+
+    </script>
+
+</body>
+</html>

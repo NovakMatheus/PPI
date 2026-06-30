@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+.container{
+    width:900px;
+    margin:20px auto;
+    display:flex;
+    background:white;
+    box-shadow:0 0 10px gray;
+}
+
+/* Lado esquerdo */
+
+.esquerda{
+    width:260px;
+    background:#434852;
+    color:white;
+    padding:20px;
+}
+
+.foto{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.esquerda h2{
+    margin:15px 0;
+    border-bottom:1px solid #ccc;
+    padding-bottom:10px;
+}
+
+.esquerda h3{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.esquerda p{
+    margin:5px 0 15px;
+    line-height:22px;
+}
+
+/* Lado direito */
+
+.direita{
+    flex:1;
+    padding:25px;
+}
+
+.direita h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+hr{
+    margin:15px 0;
+}
+
+.resumo{
+    line-height:28px;
+    color:#555;
+    margin-bottom:30px;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+.experiencia{
+    margin-bottom:30px;
+}
+
+.cabecalho{
+    display:flex;
+    justify-content:space-between;
+    font-weight:bold;
+    font-size:22px;
+}
+
+.empresa{
+    font-style:italic;
+    color:#666;
+    margin:5px 0 10px;
+}
+
+ul{
+    margin-left:25px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="esquerda">
+
+        <img src="https://bcw-media.s3.ap-northeast-1.amazonaws.com/yce_avatar_topbanner_mb_1_927935f20c.jpg" class="foto">
+
+        <h2>Pessoal</h2>
+
+        <h3>Nome</h3>
+        <p>Joana Barbosa</p>
+
+        <h3>Endereço</h3>
+        <p>Rua da Paz, 250<br>7100-011 Lisboa</p>
+
+        <h3>Número de telefone</h3>
+        <p>9630002121</p>
+
+        <h3>Email</h3>
+        <p>exemplos@cvmaker.pt</p>
+
+        <h3>Interesses</h3>
+        <p>Marketing<br>Leitura<br>Tecnologia</p>
+
+    </div>
+
+    <div class="direita">
+
+        <h1>Joana Barbosa</h1>
+
+        <hr>
+
+        <p class="resumo">
+            Uma marketer digital com sentido de missão e com mais de três anos de
+            experiência em conduzir iniciativas promocionais. Sou uma especialista
+            em online marketing, lead generation e nurturing. Tenho uma comunicação
+            exemplar, aptidões interpessoais e trabalho bem sob pressão para atingir
+            os objetivos.
+        </p>
+
+        <h2>Experiência profissional</h2>
+
+        <hr>
+
+        <div class="experiencia">
+
+            <div class="cabecalho">
+                <span>Junior SEO Marketer</span>
+                <span>2017 - 2019</span>
+            </div>
+
+            <div class="empresa">Cyanca, Lisboa</div>
+
+            <ul>
+                <li>Página on/off SEO</li>
+                <li>Estratégias de linkbuilding</li>
+                <li>Criação de conteúdo relevante</li>
+                <li>Ferramentas: Ahrefs, Google Analytics, Google Search Console e Adwords.</li>
+            </ul>
+
+        </div>
+
+        <div class="experiencia">
+
+            <div class="cabecalho">
+                <span>Assistente de Vendas</span>
+                <span>2015 - 2016</span>
+            </div>
+
+            <div class="empresa">Salsa, Lisboa</div>
+
+            <ul>
+                <li>Contribuição para os objetivos de vendas.</li>
+                <li>Gestão de inventário.</li>
+                <li>Apoio aos clientes.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

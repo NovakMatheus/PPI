@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cor Aleatória</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    transition: background-color 0.5s;
+}
+
+button{
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Alterar Cor de Fundo</h1>
+
+<button onclick="mudarCor()">Mudar Cor</button>
+
+<script>
+
+function mudarCor(){
+
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+}
+
+</script>
+
+</body>
+</html>

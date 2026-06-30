@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bandeiras em HTML e CSS</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+}
+
+a{
+    margin:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.bandeira{
+    width:300px;
+    height:180px;
+    border:1px solid black;
+    margin:30px auto;
+    position:relative;
+}
+
+/* =================== JAPÃO =================== */
+
+#japao.bandeira{
+    background:white;
+}
+
+#japao.bandeira>div.circulo{
+    width:80px;
+    height:80px;
+    background:red;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* =================== ALEMANHA =================== */
+
+#alemanha.bandeira>div{
+    height:60px;
+}
+
+#alemanha.bandeira>.faixa1{
+    background:black;
+}
+
+#alemanha.bandeira>.faixa2{
+    background:red;
+}
+
+#alemanha.bandeira>.faixa3{
+    background:gold;
+}
+
+/* =================== HOLANDA =================== */
+
+#holanda.bandeira>div{
+    height:60px;
+}
+
+#holanda.bandeira>.faixa1{
+    background:red;
+}
+
+#holanda.bandeira>.faixa2{
+    background:white;
+}
+
+#holanda.bandeira>.faixa3{
+    background:blue;
+}
+
+/* =================== ITÁLIA =================== */
+
+#italia.bandeira>div{
+    width:100px;
+    height:180px;
+    float:left;
+}
+
+#italia.bandeira>.faixa1{
+    background:green;
+}
+
+#italia.bandeira>.faixa2{
+    background:white;
+}
+
+#italia.bandeira>.faixa3{
+    background:red;
+}
+
+/* =================== BRASIL =================== */
+
+#brasil.bandeira{
+    background:green;
+}
+
+#brasil.bandeira>.losango{
+    width:160px;
+    height:160px;
+    background:yellow;
+    position:absolute;
+    top:10px;
+    left:70px;
+    transform:rotate(45deg);
+}
+
+#brasil.bandeira>.circulo{
+    width:80px;
+    height:80px;
+    background:blue;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Âncoras Internas</h2>
+
+<a href="#japao">Bandeira Japão</a> |
+<a href="#alemanha">Bandeira Alemanha</a> |
+<a href="#holanda">Bandeira Holanda</a> |
+<a href="#italia">Bandeira Itália</a> |
+<a href="#brasil">Bandeira Brasil</a>
+
+<h2>Japão</h2>
+
+<div class="bandeira" id="japao">
+    <div class="circulo"></div>
+</div>
+
+<h2>Alemanha</h2>
+
+<div class="bandeira" id="alemanha">
+    <div class="faixa1"></div>
+    <div class="faixa2"></div>
+    <div class="faixa3"></div>
+</div>
+
+<h2>Holanda</h2>
+
+<div class="bandeira" id="holanda">
+    <div class="faixa1"></div>
+    <div class="faixa2"></div>
+    <div class="faixa3"></div>
+</div>
+
+<h2>Itália</h2>
+
+<div class="bandeira" id="italia">
+    <div class="faixa1"></div>
+    <div class="faixa2"></div>
+    <div class="faixa3"></div>
+</div>
+
+<h2>Brasil</h2>
+
+<div class="bandeira" id="brasil">
+    <div class="losango"></div>
+    <div class="circulo"></div>
+</div>
+
+</body>
+</html>

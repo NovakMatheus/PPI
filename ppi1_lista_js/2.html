@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipos de Dados em JavaScript</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:20px;
+    }
+
+    button{
+        padding:10px 20px;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    p{
+        background:#f2f2f2;
+        padding:8px;
+        border-radius:5px;
+    }
+
+    h2{
+        margin-top:30px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Tipos de Dados em JavaScript</h1>
+
+<button onclick="executar()">Executar Script</button>
+
+<h2>Tipos das Variáveis</h2>
+
+<p id="pstring"></p>
+<p id="pnumero"></p>
+<p id="pboolean"></p>
+<p id="pundefined"></p>
+<p id="pnull"></p>
+<p id="pobject"></p>
+<p id="parray"></p>
+
+<h2>Operações entre Tipos</h2>
+
+<p id="op1"></p>
+<p id="op2"></p>
+<p id="op3"></p>
+<p id="op4"></p>
+
+<script>
+
+function executar(){
+
+    let texto = "Olá";
+    let numero = 10;
+    let logico = true;
+    let indefinido;
+    let vazio = null;
+    let objeto = {
+        nome:"João",
+        idade:20
+    };
+    let vetor = [1,2,3,4];
+
+    document.getElementById("pstring").innerText =
+        "String: " + texto + " | typeof = " + typeof texto;
+
+    document.getElementById("pnumero").innerText =
+        "Number: " + numero + " | typeof = " + typeof numero;
+
+    document.getElementById("pboolean").innerText =
+        "Boolean: " + logico + " | typeof = " + typeof logico;
+
+    document.getElementById("pundefined").innerText =
+        "Undefined: " + indefinido + " | typeof = " + typeof indefinido;
+
+    document.getElementById("pnull").innerText =
+        "Null: " + vazio + " | typeof = " + typeof vazio;
+
+    document.getElementById("pobject").innerText =
+        "Object: " + JSON.stringify(objeto) + " | typeof = " + typeof objeto;
+
+    document.getElementById("parray").innerText =
+        "Array: " + vetor + " | typeof = " + typeof vetor;
+
+    let r1 = texto + numero;
+    let r2 = logico * numero;
+    let r3 = numero + vazio;
+    let r4 = numero + indefinido;
+
+    console.log("String + Number =", r1);
+    console.log("Boolean * Number =", r2);
+    console.log("Number + Null =", r3);
+    console.log("Number + Undefined =", r4);
+
+    document.getElementById("op1").innerText =
+        "String + Number = " + r1 +
+        " → O número é convertido para texto e ocorre concatenação.";
+
+    document.getElementById("op2").innerText =
+        "Boolean * Number = " + r2 +
+        " → true vale 1 e false vale 0 em operações matemáticas.";
+
+    document.getElementById("op3").innerText =
+        "Number + Null = " + r3 +
+        " → null é convertido para 0.";
+
+    document.getElementById("op4").innerText =
+        "Number + Undefined = " + r4 +
+        " → undefined não pode ser convertido para número, gerando NaN.";
+}
+
+</script>
+
+</body>
+</html>

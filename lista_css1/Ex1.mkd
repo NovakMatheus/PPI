@@ -1,0 +1,17 @@
+Uma regra CSS é um conjunto de instruções que define como um ou mais elementos HTML serão exibidos em uma página. Cada regra é composta por um seletor e um bloco de declarações. As declarações contêm uma propriedade e um valor.
+
+A estrutura básica é:
+
+seletor {
+    propriedade: valor;
+}
+Exemplo:
+h1 {
+    color: blue;
+}
+
+Explicação:
+
+Seletor: h1 → seleciona todos os títulos <h1> da página.
+Propriedade: color → define a cor do texto.
+Valor: blue → especifica que a cor será azul.

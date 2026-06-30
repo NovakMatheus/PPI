@@ -1,0 +1,8 @@
+Regra 1: li { color:red; } → aplica vermelho a todos os <li>.
+Regra 2: .churras { color:green; } → aplica verde aos elementos da classe churras.
+Regra 3: .fruta { color:gray; } → aplica cinza aos elementos da classe fruta.
+Regra 4: li+li.churras { color:black; } → aplica preto aos elementos churras que são imediatamente precedidos por outro <li>.
+Regra 5: .churras[draggable="true"] { color:magenta; } → aplica magenta aos elementos da classe churras com draggable="true".
+Regra 6: #lip1, #lip2, #lip3 { color:blue; } → aplica azul aos elementos com esses IDs.
+Regra 7: #lip3.fruta { color:orange; } → aplica laranja especificamente ao elemento que possui ID lip3 e classe fruta.
+Regra 8: ol > li.churras#lip5 { color:purple; } → não é aplicada a nenhum elemento, pois não existe um <li> com id="lip5" e classe churras dentro da lista.

@@ -1,0 +1,31 @@
+Existem três formas principais de incluir CSS em documentos HTML:
+
+CSS Inline: o estilo é aplicado diretamente na tag HTML por meio do atributo style.
+<p style="color: blue;">Este texto é azul.</p>
+CSS Interno (Embedded): o código CSS é colocado dentro da tag <style>, localizada na seção <head> do documento HTML.
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>Este texto é azul.</p>
+</body>
+</html>
+CSS Externo: os estilos ficam em um arquivo separado com extensão .css, que é vinculado ao HTML por meio da tag <link>. Esse é o método mais recomendado para organizar e reutilizar os estilos.
+
+HTML:
+
+<head>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+Arquivo estilo.css:
+
+p {
+    color: blue;
+}

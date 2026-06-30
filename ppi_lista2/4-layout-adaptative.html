@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Responsivo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f0f0f0;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    display:grid;
+    gap:10px;
+    grid-template-columns:180px 1fr 180px;
+    grid-template-areas:
+        "header header header"
+        "left center right"
+        "footer footer footer";
+}
+
+header{
+    grid-area:header;
+    background:gold;
+    text-align:center;
+    padding:20px;
+    font-weight:bold;
+}
+
+.left{
+    grid-area:left;
+    background:green;
+    color:white;
+    padding:20px;
+}
+
+.right{
+    grid-area:right;
+    background:gold;
+    padding:20px;
+}
+
+.center{
+    grid-area:center;
+    display:grid;
+    gap:10px;
+    grid-template-rows:60px 1fr 60px;
+}
+
+.banner{
+    background:#d84b3c;
+    color:white;
+    text-align:center;
+    line-height:60px;
+    font-weight:bold;
+}
+
+main{
+    background:cornflowerblue;
+    min-height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.low{
+    background:green;
+    color:white;
+    padding:20px;
+}
+
+footer{
+    grid-area:footer;
+    background:royalblue;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-weight:bold;
+}
+
+/* Layout para celulares */
+@media screen and (max-width:768px){
+
+.container{
+    grid-template-columns:1fr;
+    grid-template-areas:
+        "header"
+        "left"
+        "center"
+        "right"
+        "footer";
+}
+
+main{
+    min-height:500px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <header>Header</header>
+
+    <div class="left">Left Aside</div>
+
+    <div class="center">
+        <div class="banner">Banner</div>
+        <main>Main Content</main>
+        <div class="low">Low Content</div>
+    </div>
+
+    <div class="right">Right Aside</div>
+
+    <footer>Footer</footer>
+
+</div>
+
+</body>
+</html>

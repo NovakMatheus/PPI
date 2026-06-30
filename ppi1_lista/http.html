@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP</title>
+</head>
+<body>
+
+    <h1>O Protocolo HTTP</h1>
+
+    <nav>
+        <a href="index.html">Início</a> |
+        <a href="historia.html">História da Web</a> |
+        <a href="http.html">HTTP</a> |
+        <a href="estados.html">Estados</a> |
+        <a href="curriculo.html">Currículo</a> |
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <hr>
+
+    <h2>O que é o HTTP?</h2>
+
+    <p>
+        HTTP (HyperText Transfer Protocol) é o protocolo utilizado para a comunicação
+        entre o navegador do usuário e o servidor onde um site está hospedado.
+        Sempre que uma página é acessada, o navegador envia uma solicitação ao
+        servidor, que responde com os arquivos necessários para exibir o conteúdo.
+    </p>
+
+    <h2>Como funciona a comunicação?</h2>
+
+    <h3>Cliente</h3>
+    <p>
+        O cliente é o navegador (Google Chrome, Firefox, Edge, etc.), responsável
+        por solicitar informações ao servidor.
+    </p>
+
+    <h3>Servidor</h3>
+    <p>
+        O servidor é o computador que armazena o site e responde às solicitações
+        enviadas pelos clientes.
+    </p>
+
+    <h3>Requisição (Request)</h3>
+    <p>
+        É a mensagem enviada pelo cliente solicitando um recurso, como uma página,
+        imagem ou arquivo.
+    </p>
+
+    <h3>Resposta (Response)</h3>
+    <p>
+        É a mensagem enviada pelo servidor contendo o recurso solicitado ou um
+        código informando o resultado da solicitação.
+    </p>
+
+    <hr>
+
+    <h2>Métodos HTTP</h2>
+
+    <h3>GET</h3>
+    <p>
+        O método <strong>GET</strong> é utilizado para solicitar informações ao
+        servidor. É o método mais comum ao acessar páginas da Web.
+    </p>
+
+    <h3>POST</h3>
+    <p>
+        O método <strong>POST</strong> é utilizado para enviar dados ao servidor,
+        como formulários de cadastro, login ou envio de mensagens.
+    </p>
+
+    <hr>
+
+    <h2>Exemplo de Requisição HTTP</h2>
+
+    <pre>
+GET /index.html HTTP/1.1
+Host: www.exemplo.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+    </pre>
+
+    <hr>
+
+    <h2>Exemplo de Resposta HTTP</h2>
+
+    <pre>
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+&lt;html&gt;
+    &lt;body&gt;
+        Página carregada com sucesso.
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <hr>
+
+    <h2>Principais Códigos de Status HTTP</h2>
+
+    <table border="1">
+        <tr>
+            <th>Código</th>
+            <th>Significado</th>
+        </tr>
+
+        <tr>
+            <td>200</td>
+            <td>Requisição realizada com sucesso.</td>
+        </tr>
+
+        <tr>
+            <td>301</td>
+            <td>Recurso movido permanentemente para outro endereço.</td>
+        </tr>
+
+        <tr>
+            <td>400</td>
+            <td>Requisição inválida enviada pelo cliente.</td>
+        </tr>
+
+        <tr>
+            <td>403</td>
+            <td>Acesso proibido ao recurso solicitado.</td>
+        </tr>
+
+        <tr>
+            <td>404</td>
+            <td>Página ou recurso não encontrado.</td>
+        </tr>
+
+        <tr>
+            <td>500</td>
+            <td>Erro interno do servidor.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Resumo</h2>
+
+    <ul>
+        <li>HTTP é o protocolo de comunicação da Web.</li>
+        <li>O navegador funciona como cliente.</li>
+        <li>O servidor responde às solicitações.</li>
+        <li>GET solicita informações.</li>
+        <li>POST envia dados ao servidor.</li>
+        <li>Os códigos de status informam o resultado da requisição.</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barquinho Animado</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+}
+
+/* Céu */
+
+.cena{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    background:linear-gradient(#cfefff,#8fd3ff);
+}
+
+/* Mar */
+
+.mar{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:35%;
+    background:#3b4cff;
+    overflow:hidden;
+}
+
+.mar::before,
+.mar::after{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:100px;
+    left:-50%;
+    top:-40px;
+    background:
+    radial-gradient(circle at 20px 20px, white 18px, transparent 20px);
+    background-size:60px 40px;
+    animation:ondas 6s linear infinite;
+    opacity:.5;
+}
+
+.mar::after{
+    top:-20px;
+    animation-duration:10s;
+    opacity:.3;
+}
+
+@keyframes ondas{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-120px);
+    }
+}
+
+/* Barco */
+
+.barco{
+    position:absolute;
+    bottom:28%;
+    left:-150px;
+    width:120px;
+    height:120px;
+    background-image:url("https://static.vecteezy.com/ti/vetor-gratis/p1/46889052-alegre-desenho-animado-barco-plano-desenhos-isolado-em-branco-fundo-gratis-vetor.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    z-index:5;
+
+    animation:
+        navegar 15s linear infinite,
+        balanco 1.5s ease-in-out infinite;
+}
+
+@keyframes navegar{
+    from{
+        left:-150px;
+    }
+
+    to{
+        left:110%;
+    }
+}
+
+@keyframes balanco{
+    0%{
+        transform:rotate(-5deg);
+    }
+
+    50%{
+        transform:rotate(5deg);
+    }
+
+    100%{
+        transform:rotate(-5deg);
+    }
+}
+
+/* Nuvem */
+
+.nuvem{
+    position:absolute;
+    top:80px;
+    left:-250px;
+    width:130px;
+    height:50px;
+    background:white;
+    border-radius:50px;
+    box-shadow:
+        35px -20px 0 10px white,
+        75px -10px 0 15px white,
+        110px 0 0 5px white;
+    animation:nuvem 30s linear infinite;
+}
+
+@keyframes nuvem{
+    from{
+        left:-250px;
+    }
+
+    to{
+        left:110%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cena">
+
+    <div class="nuvem"></div>
+
+    <div class="barco"></div>
+
+    <div class="mar"></div>
+
+</div>
+
+</body>
+</html>

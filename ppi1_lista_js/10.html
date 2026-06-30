@@ -1,0 +1,36 @@
+<script>
+
+const botao = document.getElementById("alertButton");
+const texto = document.getElementById("textInput");
+const div = document.getElementById("hoverDiv");
+const select = document.getElementById("colorSelect");
+
+botao.addEventListener("click", function(){
+    alert("Botão clicado!");
+});
+
+texto.addEventListener("keydown", function(event){
+    console.log("Tecla pressionada: " + event.key);
+});
+
+texto.addEventListener("focus", function(){
+    texto.style.backgroundColor = "yellow";
+});
+
+texto.addEventListener("blur", function(){
+    texto.style.backgroundColor = "white";
+});
+
+div.addEventListener("mouseover", function(){
+    div.style.backgroundColor = "lightblue";
+});
+
+div.addEventListener("mouseout", function(){
+    div.style.backgroundColor = "";
+});
+
+select.addEventListener("change", function(){
+    document.body.style.backgroundColor = select.value;
+});
+
+</script>

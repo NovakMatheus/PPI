@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout com Grid</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width:320px;
+    height:230px;
+    display:grid;
+    gap:6px;
+
+    grid-template-columns:1fr 1.5fr 1fr;
+    grid-template-rows:55px 52px 52px 52px;
+
+    grid-template-areas:
+        "um um um"
+        "dois tres quatro"
+        "cinco tres seis"
+        "cinco sete sete";
+}
+
+.item{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+.amarelo{
+    background:#f8da87;
+}
+
+.rosa{
+    background:#e84572;
+}
+
+.item1{ grid-area:um; }
+.item2{ grid-area:dois; }
+.item3{ grid-area:tres; }
+.item4{ grid-area:quatro; }
+.item5{ grid-area:cinco; }
+.item6{ grid-area:seis; }
+.item7{ grid-area:sete; }
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="item item1 amarelo">1</div>
+    <div class="item item2 rosa">2</div>
+    <div class="item item3 amarelo">3</div>
+    <div class="item item4 rosa">4</div>
+    <div class="item item5 amarelo">5</div>
+    <div class="item item6 rosa">6</div>
+    <div class="item item7 amarelo">7</div>
+
+</div>
+
+</body>
+</html>
